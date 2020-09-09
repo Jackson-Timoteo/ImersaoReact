@@ -8,9 +8,9 @@ function FormField({ label, type, name, value, onChange }) {
     return(
         <div>
         <label 
-          htmlFor={}
+          htmlFor={fieldId}
         >
-            {label} 
+            {label} ;
           <input
             id={fieldId}
             type={type}
