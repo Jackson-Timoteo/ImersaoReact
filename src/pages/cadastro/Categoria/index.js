@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import PageDefault from '../../../components/PagesDefault';
 import FormField from '../../../components/FormField';
+import Button from '../../../components/Button';
 
 function CadastroCategoria() {
-
   const valoresInicias = {
     nome: '',
     descricao: '',
@@ -51,7 +51,8 @@ function CadastroCategoria() {
         value={values.nome}
         onChange={handleChange}
       />
-          
+  
+  
           <div>
             <label>
               Descrição:
@@ -84,9 +85,9 @@ function CadastroCategoria() {
               </label>
       </div> */}
 
-         <button>
+         <Button>
            Cadastrar:
-         </button>
+         </Button>
        </form>
 
        <ul>
