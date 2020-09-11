@@ -24,15 +24,14 @@ function CadastroCategoria() {
   function handleChange(infosDoEvento){
 
     const { getAttribute, value } = infosDoEvento.target; 
-    setValue(
-      getAttribute('name'),
-      value
-    );
+      setValue(() => {getAttribute('name')}, value);
   }
 
    return (
      <PageDefault>
-       <h1>Cadastro de Categoria: {values.nome} </h1>
+       <h1>
+          Cadastro de Categoria: {values.nome} 
+        </h1>
  
        <form onSubmit={function handleSubmit(infosDoEvento){
          infosDoEvento.preventDefault();
@@ -66,24 +65,12 @@ function CadastroCategoria() {
           </div>
 
           <FormField
-          label='Cor'
-          type="color"
-          name="cor"
-          value={values.nome}
-          onChange={handleChange}
-      />
-
-           {/*} <div>
-            <label>
-              Color:
-              <input
-                type="color"
-                value={values.cor}
-                name="cor"
-                onChange={handleChange}
-              />
-              </label>
-      </div> */}
+            label='Cor'
+            type="color"
+            name="cor"
+            value={values.cor}
+            onChange={handleChange}
+          />
 
          <Button>
            Cadastrar:
