@@ -1,0 +1,17 @@
+{
+    "categoria": [
+        {
+            "id": 1,
+            "nome": "CloudGym",
+            "descricao": "Consultores",
+            "cor": "#cbd1ff"
+        },
+
+        {
+            "id": 1,
+            "nome": "CloudGym",
+            "descricao": "Consultores",
+            "cor": "#cbd1ff"
+        }
+    ]
+}
