@@ -30,7 +30,9 @@ function CadastroCategoria() {
 
   useEffect(() => {
     console.log('teste');
+    
     const URL_TP = 'http://localhost:8080/categoria';
+
     fetch(URL_TP)
       .then(async (respostaDo) => {
         const resposta = await respostaDo.json();
