@@ -1,3 +1,5 @@
+/* eslint-disable react/no-array-index-key */
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import PageDefault from '../../../components/PagesDefault';
@@ -25,17 +27,23 @@ function CadastroCategoria() {
     const { getAttribute, value } = infosDoEvento.target;
     setValue(() => { getAttribute('name'); }, value);
   }
-/*
-  useEffect({} => {
-    console.log('teste')/
-    
-    setTimeout({} => {
 
-    }, 4 = 1000);
+  useEffect(() => {
+    console.log('teste');
+    const URL_TP = 'http://localhost:8080/categoria';
+    fetch(URL_TP)
+      .then(async (respostaDo) => {
+        const resposta = await respostaDo.json();
+        setCategorias([
+          ...resposta,
+        ]);
+      }) 
 
+    //setTimeout(() => {
+    //}, 4 === 1000);
   }, [
 
-  ]); */
+  ]);
 
   return (
     <PageDefault>
@@ -89,11 +97,12 @@ function CadastroCategoria() {
         </Button>
       </form>
 
-    {categorias.length === 0 && 
+      {categorias.length === 0
+      && (
       <div>
-         {/* teste*/}
+        {/* teste */}
       </div>
-      }
+      )}
 
       <ul>
         {categorias.map((categoria, indice) => (
