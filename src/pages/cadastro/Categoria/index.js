@@ -29,21 +29,20 @@ function CadastroCategoria() {
   }
 
   useEffect(() => {
-    
-    const URL_TP =  window.location.hostname.includes('localhost') 
-    ? 'http://localhost:8080/categoria' 
-    : 'https://cloudflix1.herokuapp.com/categoria';
+    const URL_TP = window.location.hostname.includes('localhost')
+      ? 'http://localhost:8080/categoria'
+      : 'https://cloudflix1.herokuapp.com/categoria';
 
     fetch(URL_TP)
-      .then(async (respostaDo) => {
-        const resposta = await respostaDo.json();
+      .then(async (respostaDoServidor) => {
+        const resposta = await respostaDoServidor.json();
         setCategorias([
           ...resposta,
         ]);
-      }) 
+      });
 
-    //setTimeout(() => {
-    //}, 4 === 1000);
+    // setTimeout(() => {
+    // }, 4 === 1000);
   }, [
 
   ]);
@@ -108,9 +107,9 @@ function CadastroCategoria() {
       )}
 
       <ul>
-        {categorias.map((categoria, indice) => (
-          <li key={`${categoria}${indice}`}>
-            {categoria.nome}
+        {categorias.map((categoria) => (
+          <li key={`${categoria}${categoria.titulo}`}>
+            {categoria.titulo}
           </li>
         ))}
       </ul>
