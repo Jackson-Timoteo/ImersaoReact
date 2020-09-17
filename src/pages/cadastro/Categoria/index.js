@@ -29,9 +29,10 @@ function CadastroCategoria() {
   }
 
   useEffect(() => {
-    console.log('teste');
     
-    const URL_TP = 'http://localhost:8080/categoria';
+    const URL_TP =  window.location.hostname.includes('localhost') 
+    ? 'http://localhost:8080/categoria' 
+    : 'https://cloudflix1.herokuapp.com/categoria';
 
     fetch(URL_TP)
       .then(async (respostaDo) => {
