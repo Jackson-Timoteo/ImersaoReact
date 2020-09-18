@@ -12,9 +12,8 @@ const FormFieldWrapper = styled.div`
   }
 `;
 
-
-const Label = styled.label``
-  Label.Text = styled.label`
+const Label = styled.label``;
+Label.Text = styled.label`
   color: #E5E5E5;
   height: 57px;
   position: absolute; 
@@ -31,7 +30,6 @@ const Label = styled.label``
   
   transition: .1s ease-in-out;
   `;
-
 
 const Input = styled.input`
   background: #53585D;
@@ -80,7 +78,7 @@ function FormField({
       >
 
         <Input
-          as= {tag}
+          as={tag}
           id={fieldId}
           type={type}
           value={value}
@@ -89,7 +87,9 @@ function FormField({
         />
 
         <Label.Text>
-          {label} :
+          {label}
+          {' '}
+          :
         </Label.Text>
 
       </Label>
@@ -101,17 +101,16 @@ function FormField({
 FormField.defaultProps = {
   type: 'text',
   value: '',
-  onChange: () => {}, 
+  onChange: () => {},
 };
 
-  FormField.propTypes = {
-    
+FormField.propTypes = {
+
   label: PropTypes.string.isRequired,
   type: PropTypes.string,
   name: PropTypes.string.isRequired,
   value: PropTypes.string,
   onChange: PropTypes.func,
 };
-
 
 export default FormField;
