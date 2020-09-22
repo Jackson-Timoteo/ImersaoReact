@@ -1,13 +1,16 @@
 import config from '../config';
 
-const URL_CATEGORIES = `${config.URL_BE_TP}/categorias`;
+const URL_CATEGORIES = `${config.URL_BE_TP}/categoria?_embed=videos`;
 
 function getAllWithVideos() {
-  return fetch(URL - URL_CATEGORIES)
+  return fetch(`${URL_CATEGORIES}?_embed=videos`)
     .then(async (respostaDoServidor) => {
-      const resposta = await respostaDoServidor.json();
+      if (respostaDoServidor.ok) {
+        const resposta = await respostaDoServidor.json();
+        return resposta;
+      }
 
-      return resposta;
+      throw new Error('Não foi possível carregar os dados:(');
     });
 }
 
