@@ -1,6 +1,6 @@
 import config from '../config';
 
-const URL_CATEGORIES = `${config.URL_BE_TP}/categoria?_embed=videos`;
+const URL_CATEGORIES = `${config.URL_BE_TP}/categorias?_embed=videos`;
 
 function getAllWithVideos() {
   return fetch(`${URL_CATEGORIES}?_embed=videos`)

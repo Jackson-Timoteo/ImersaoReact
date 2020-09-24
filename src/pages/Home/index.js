@@ -15,6 +15,7 @@ function Home() {
   useEffect(() => {
     categoriasRepository.getAllWithVideos()
       .then((categoriasComVideos) => {
+        console.log('categoriasComVideos', categoriasComVideos);
         setDadosInicias(categoriasComVideos);
       })
       .catch((err) => {
