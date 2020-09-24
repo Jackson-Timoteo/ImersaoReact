@@ -24,14 +24,14 @@ function Home() {
 
   return (
     <PageDefault>
+
       {dadosIniciais.length === 0 && (<div>Loading...</div>)}
 
       {dadosIniciais.length >= 1 && (
 
         <>
           <BannerMain
-            videoTitle={dadosIniciais[0]
-              .videos[0].titulo}
+            videoTitle={dadosIniciais[0].videos[0].titulo}
             url={dadosIniciais[0].videos[0].url}
           />
 
@@ -41,8 +41,6 @@ function Home() {
           />
         </>
       )}
-
-      {JSON.stringify(dadosIniciais)}
 
       {/* <BannerMain
         videoTitle={dadosIniciais.categorias[0].videos[0].titulo}
